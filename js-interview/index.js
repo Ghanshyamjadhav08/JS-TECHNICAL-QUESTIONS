@@ -100,7 +100,7 @@ const mapResult =  arr.map((ar) => {
     arr[i] = ar + 3;
 });
 
-console.log(mapResult, forEachReuslt, arr)
+//console.log(mapResult, forEachReuslt, arr)
 
 
 
@@ -114,5 +114,40 @@ let students = [
     {name:"Harshal", rollno:76, marks: 98}
 ];
 
-const names = students.map(stu => stu.name.toUpperCase());
-console.log(names);
+//const names = students.map(stu => stu.name.toUpperCase());
+//console.log(names);
+
+//2 : return only details of those who score more than 60 marks
+
+const details = students.filter((stu => stu.marks> 60));
+
+//console.log(details); 
+
+
+//3: More than 60 marks and rollnumber greater than 50;
+
+const res = students.filter((stu => stu.marks > 60 && stu.rollno > 50));
+//console.log(res); //{ name: 'Harshal', rollno: 76, marks: 98 } ] 
+
+
+//4 : sum of marks of all the students
+
+   const sum = students.reduce((acc, curr) => acc + curr.marks,0);
+//console.log(sum);
+
+
+// 5: Return only name of students who scored more than 60
+
+const names = students.filter((stu) => stu.marks > 60).map((stu) => stu.name);
+//console.log(names);
+
+
+// 6: Return total marks for students with marks greater than 60 after 20 marks have been added to those who scored less than 60
+
+const totalMarks = students.map((stu => {
+    if(stu.marks < 60)
+        stu.marks += 20;
+    return stu;
+})).filter((stu) => stu.marks > 60).reduce((acc,curr) => acc + curr.marks, 0);
+
+console.log(totalMarks);
