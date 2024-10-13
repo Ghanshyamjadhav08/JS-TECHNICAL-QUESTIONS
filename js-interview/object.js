@@ -1,4 +1,6 @@
 // object in javascript
+/*
+
 const user = {
     name:"ghanshyam jadhav",
     age:26,
@@ -6,13 +8,15 @@ const user = {
     "like this code" : true
 };
 
+*/
+
 //console.log(user.name);// access the name property
 
-user.name = "shyam";// modifying property
-delete user.age// delete any property inside of an object
+//user.name = "shyam";// modifying property
+//delete user.age// delete any property inside of an object
 //delete  user["like this code"];// dletting this property
 //console.log(user["like this code"]);//acess this property
-console.log(user);
+//console.log(user);
 
 const func = (function (a) {
     delete a;
@@ -137,3 +141,42 @@ const {
 
 } = Employee;
 console.log(first);
+
+
+function getItems(fruitList, favouriteFruit, ...args) {
+    return [...fruitList, ...args, favouriteFruit];
+    
+}
+console.log(getItems(["banana", "apple"], "pear", "oragne")); 
+
+
+// what is shallow copy and Deep copy of an object ?
+
+
+// Shallow copy : A shallow copy of an object creates a new object, but it only copies the references to the original nested objects (e.g., arrays or other objects).
+let original = { name: "John", address: { city: "New York" } };
+let shallowCopy = { ...original };  // Shallow copy using spread operator
+
+shallowCopy.name = "Doe";
+shallowCopy.address.city = "Los Angeles";  // Modifying nested object
+
+console.log(original.name);          // "John" (no change in primitive value)
+console.log(original.address.city);  // "Los Angeles" (nested object changed)
+
+
+
+
+
+//  Deep copy : A deep copy creates a new object and recursively copies all nested objects or arrays as well.
+
+
+let user = {
+    name :"coder Gyaan",
+    age:25,
+};
+
+// 1:  const objClone = Object.assign({}, user);
+// 2:  const objClone = JSON.parse(JSON.stringify(user));
+ const objClone = {...user};
+objClone.name = "shyam";
+console.log(user, objClone);
