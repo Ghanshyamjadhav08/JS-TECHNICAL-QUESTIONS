@@ -103,3 +103,37 @@ const shape = {
 
 console.log(shape.diameter());
 console.log(shape.perimeter()); // pointed to be window object and print NaN 
+
+
+//destructuring in object
+
+/*
+   let user = {
+   name: "Shyam",
+   age:25,
+   };
+
+   const {name} = user;
+
+   console.log(name);
+
+*/
+
+
+let Employee = {
+    name:"Ghanshyam",
+    age:25,
+    fullName: {
+        first:"Ghanshyam",
+        last:"Jadhav",
+    },
+};
+
+const name = "Coder  Gyaan";
+
+
+const {
+ fullName: {first},
+
+} = Employee;
+console.log(first);
