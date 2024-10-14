@@ -1,5 +1,5 @@
 //closure in javascript
-// lexical scope
+// lexical scope in javascript
 
 
 //global scope
