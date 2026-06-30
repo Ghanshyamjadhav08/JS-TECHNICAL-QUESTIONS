@@ -1,5 +1,5 @@
 //variable and Datatypes
-// Task  Declare a variable using var , assign it a number, and log the value to the console.
+// Task  Declare a variable using var , assign it a number, and log the value to the console log and see the outpu
 var Number = 100
 console.log(Math.log((Number)));
 console.log(Number);
